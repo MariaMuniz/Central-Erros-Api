@@ -22,7 +22,7 @@ A aplicação foi configurada pra ser executada com o Maven, portanto será nece
 
 ## Deploy
 
-Para fins de demonstração de funcionamento, foi feito o deploy da aplicação na plataforma [Heroku](https://www.heroku.com/)
+Para fins de demonstração de funcionamento, foi feito o deploy da aplicação na plataforma [Heroku](https://dashboard.heroku.com/apps/app-centralerros)
 
 
 
