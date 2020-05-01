@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -19,9 +20,19 @@ public class Log implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     @JsonIgnore
     @ManyToOne
     private User user;
+    @Column
+
+    @NotNull
+    @Size(max = 100)
+    private String title;
+
+    @Column
+    @Min(0)
+    private Long events = 0L;
 
     @NotNull
     @Size(max = 500)
@@ -29,7 +40,7 @@ public class Log implements Serializable {
 
     //IP de origem
     @NotNull
-    @Size(max = 39) // Capacidade suficiente para um endereço IPv6
+    @Size(max = 39)
     private String origin;
 
     @NotNull
@@ -44,14 +55,26 @@ public class Log implements Serializable {
         this.id = id;
     }
 
-   @CreatedDate
-   private LocalDateTime createdAt;
+    @Column(columnDefinition = "timestamp default now()")
+    @CreatedDate
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime createdAt;
 
-//    @Column(columnDefinition = "timestamp default now()")
-//    @CreatedDate
-//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-//    private LocalDateTime createdAt;
+    public String getTitle() {
+        return title;
+    }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Long getEvents() {
+        return events;
+    }
+
+    public void setEvents(Long events) {
+        this.events = events;
+    }
 
     public long getId() {
         return id;

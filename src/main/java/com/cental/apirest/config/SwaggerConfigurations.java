@@ -1,6 +1,5 @@
 package com.cental.apirest.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
@@ -22,7 +21,7 @@ import java.util.function.Predicate;
 
 @Configuration
 @EnableSwagger2
-@ComponentScan(basePackages= "com.central.apirest.logs")
+@ComponentScan(basePackages = "com.central.apirest.logs")
 public class SwaggerConfigurations extends WebMvcConfigurationSupport {
 
     public Docket api() {
@@ -41,8 +40,8 @@ public class SwaggerConfigurations extends WebMvcConfigurationSupport {
     private ApiInfo apiInfo() {
 
         ApiInfo apiInfo = new ApiInfoBuilder()
-                .title ("API de Registro de eventos de log")
-                .description ("Essa é a API de para registrar eventos de log.")
+                .title("API de Registro de eventos de log")
+                .description("Essa é a API de para registrar eventos de log.")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
                 .termsOfServiceUrl("/service.html")
@@ -61,9 +60,10 @@ public class SwaggerConfigurations extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
+
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
-        argumentResolvers.add( new PageableHandlerMethodArgumentResolver());
+        argumentResolvers.add(new PageableHandlerMethodArgumentResolver());
     }
 
 }

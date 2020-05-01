@@ -1,4 +1,5 @@
 package com.cental.apirest.controller;
+
 import com.cental.apirest.model.User;
 import com.cental.apirest.repository.UserRepository;
 import io.swagger.annotations.Api;
@@ -8,18 +9,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Optional;
 
 
 @RestController
 @RequestMapping(value = "/users")
-@Api(value="Api Rest User")
-@CrossOrigin(origins="*")
+@Api(value = "Api Rest User")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired
@@ -27,9 +24,8 @@ public class UserController {
 
     @CrossOrigin(origins = "*")
     @PostMapping
-    @ApiOperation(value="Adiciona um usuario")
-    public ResponseEntity<User> adicionar(@RequestBody User user)
-    {
+    @ApiOperation(value = "Adiciona um usuario")
+    public ResponseEntity<User> adicionar(@RequestBody User user) {
         LocalDateTime date = LocalDateTime.now();
         user.setCreatedAt(date);
         User userRet = userRepository.save(user);
@@ -39,21 +35,19 @@ public class UserController {
 
     @CrossOrigin(origins = "*")
     @GetMapping
-    @ApiOperation(value="Retorna a todos os usuarios cadastrados")
+    @ApiOperation(value = "Retorna a todos os usuarios cadastrados")
     public Iterable<User> findAll() {
         return this.userRepository.findAll();
     }
 
 
     @CrossOrigin(origins = "*")
-    @ApiOperation(value="Retorna a um usuario correspondente ao id")
+    @ApiOperation(value = "Retorna a um usuario correspondente ao id")
     @GetMapping("/{id}")
     public Optional<User> unico(@PathVariable Long id) {
-        int i =0;
-        int d = 1+2+i;
+
         return this.userRepository.findById(id);
     }
-
 
 
 }

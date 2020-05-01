@@ -1,6 +1,5 @@
 package com.cental.apirest.service;
 
-import com.cental.apirest.model.Log;
 import com.cental.apirest.model.User;
 import com.cental.apirest.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -11,7 +10,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 
 
@@ -21,7 +19,6 @@ public class UserServiceImpl implements UserServiceInterface, UserDetailsService
 
     @Autowired
     UserRepository userRepository;
-
 
 
     public User save(User user) {
