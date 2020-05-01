@@ -18,22 +18,22 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
 public class LogServiceImplTest {
-  @Mock
-   private LogRepository logRepository;
+    @Mock
+    private LogRepository logRepository;
 
-  @InjectMocks
-   private LogServiceImpl logServiceImpl;
+    @InjectMocks
+    private LogServiceImpl logServiceImpl;
 
-   @Test
+    @Test
     public void testFindLogById() {
-       mockFindLogById();
-       long id = this.logServiceImpl.show(new Long(1)).get().getId();
-       assertEquals(1, id);
-  }
+        mockFindLogById();
+        long id = this.logServiceImpl.findById(new Long(1)).get().getId();
+        assertEquals(1, id);
+    }
 
     private void mockFindLogById() {
         Log log = mock(Log.class);
-       when(log.getId()).thenReturn(new Long (1));
+        when(log.getId()).thenReturn(new Long(1));
         when(this.logRepository.findById(new Long(1))).thenReturn(java.util.Optional.of(log));
 
     }
