@@ -15,6 +15,8 @@ MUDEI AQUI.,...
 - [Swagger](https://swagger.io/) ```2.9.2```
 - [Docker](https://www.docker.com/) ```19.03.2 CE```
 
+## Documentação
+https://centralerroapi.herokuapp.com/swagger-ui.htm
 
 ## Deploy
 
