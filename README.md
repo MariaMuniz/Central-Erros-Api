@@ -15,11 +15,6 @@ MUDEI AQUI.,...
 - [Swagger](https://swagger.io/) ```2.9.2```
 - [Docker](https://www.docker.com/) ```19.03.2 CE```
 
-## Instalação
-
-A aplicação foi configurada pra ser executada com o Maven, portanto será necessário a instalação dessa ferramenta. 
-
-> Instalando o Maven: [https://maven.apache.org/install.html](https://maven.apache.org/install.html).
 
 ## Deploy
 
@@ -31,6 +26,12 @@ Para fins de demonstração de funcionamento, foi feito o deploy da aplicação 
 - https://centralerroapi.herokuapp.com/users/1 (metodo GET, retorna usuário de id 1)
 - https://centralerroapi.herokuapp.com/users (metodo POST, insere um usuario)
 - https://centralerroapi.herokuapp.com/logs ( metodo GET, retorna todos os logs)
+- https://centralerroapi.herokuapp.com/logs?title=usuario não válido(metodo GET, retorna a logs com os titulo "usuario não válido".
+- https://centralerroapi.herokuapp.com/logs/1 (metodo GET, retorna log de id 1)
+- https://centralerroapi.herokuapp.com/logs?sort=origin (metodo GET, retorna a logs ordenados por origin)
+
+obs: Os links Funcionan no Postman e com token. Para acessar o token use Basic Auth Usaname:Maria Password:minaselinda e no body digite
+grant_type:password, usaname:roberto@roberto.com password:123456.
 
 
 
