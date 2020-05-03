@@ -16,7 +16,7 @@ MUDEI AQUI.,...
 - [Docker](https://www.docker.com/) ```19.03.2 CE```
 
 ## Documentação
-https://centralerroapi.herokuapp.com/swagger-ui.htm
+https://centralerroapi.herokuapp.com/swagger-ui.html
 
 ## Deploy
 
