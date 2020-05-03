@@ -23,7 +23,15 @@ A aplicação foi configurada pra ser executada com o Maven, portanto será nece
 
 ## Deploy
 
-Para fins de demonstração de funcionamento, foi feito o deploy da aplicação na plataforma [Heroku](https://centralerroapi.herokuapp.com/swagger-ui.html)
+Para fins de demonstração de funcionamento, foi feito o deploy da aplicação na plataforma [Heroku](https://centralerroapi.herokuapp.com/)
+
+## Endpoint
+
+- https://centralerroapi.herokuapp.com/oauth/token(metodo POST, retorna o token)
+- https://centralerroapi.herokuapp.com/users/1 (metodo GET, retorna usuário de id 1)
+- https://centralerroapi.herokuapp.com/users (metodo POST, insere um usuario)
+- https://centralerroapi.herokuapp.com/logs ( metodo GET, retorna todos os logs)
+
 
 
 
