@@ -32,7 +32,7 @@ Para fins de demonstração de funcionamento, foi feito o deploy da aplicação 
 - https://centralerroapi.herokuapp.com/logs/1 (metodo GET, retorna log de id 1)
 - https://centralerroapi.herokuapp.com/logs?sort=origin (metodo GET, retorna a logs ordenados por origin)
 
-obs: Os links Funcionan no Postman e com token. Para acessar o token use Basic Auth Usaname:Maria Password:minaselinda e no body digite
+obs: Os links funcionan com ferramentas que tem como objetivo testar serviços RESTful (Web APIs) como o Postman. Para acessar o token use Basic Auth Usaname:Maria Password:minaselinda e no body digite
 grant_type:password, usaname:roberto@roberto.com password:123456.
 
 
